@@ -85,6 +85,11 @@ One Day National Workshop On "AI ADOPTION TRENDS IN KEY INDUSTRIES UPDATES"    |
 <a href="#">Training & Placement cell</a>
 <a href="#">Alumni</a>
 <a href="#">Contact Us</a>
+<li>
+    <a href="#" onclick="openSearch()">
+        🔍
+    </a>
+</li>
 
 </nav>
 
@@ -125,11 +130,6 @@ One Day National Workshop On "AI ADOPTION TRENDS IN KEY INDUSTRIES UPDATES"    |
         <li>Institute Newsletter</li>
         <li>PhD Seminar</li>
         <li>Contact Us</li>
-        <li>
-    <a href="#" onclick="openSearch()">
-        🔍
-    </a>
-</li>
       </ul>
     </div>
 
@@ -187,6 +187,29 @@ document.getElementById("temp").innerHTML =
 "Temp: " + data.main.temp + "°C";
 
 });
+
+</script>
+
+<div id="searchOverlay">
+
+    <span class="closeSearch" onclick="closeSearch()">✖</span>
+
+    <div class="searchBox">
+        <input type="text" placeholder="Search Your Future Here..." />
+        <button>Search</button>
+    </div>
+
+</div>
+
+<script>
+
+function openSearch(){
+    document.getElementById("searchOverlay").style.display="flex";
+}
+
+function closeSearch(){
+    document.getElementById("searchOverlay").style.display="none";
+}
 
 </script>
 </body>
