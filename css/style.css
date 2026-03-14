@@ -272,6 +272,7 @@ font-size:14px;
 
 .searchBox button{
     padding:12px 20px;
+    margin-left:15px;
     background:red;
     color:white;
     border:none;
