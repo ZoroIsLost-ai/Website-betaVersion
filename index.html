@@ -14,6 +14,8 @@
 
 <body>
 
+  
+
 <!-- PRELOADER -->
 <div id="preloader">
 
@@ -30,6 +32,35 @@
 </div>
 
 
+<div class="SOET-Topstrip">
+
+<div class="topbar">
+
+<div class="topbar-left">
+<a href="#">Students</a> |
+<a href="#">Faculty & Staff</a> |
+<a href="#">Alumni</a> |
+<a href="#">Industry</a> |
+<a href="#">Directory</a> |
+<a href="#">Contact</a>
+</div>
+
+<div class="topbar-right">
+<span onclick="changeFontSize(-1)">A-</span>
+<span onclick="changeFontSize(0)">A</span>
+<span onclick="changeFontSize(1)">A+</span>
+
+<span onclick="translatePage('hi')">हिंदी</span> |
+<span onclick="translatePage('en')">ENG</span>
+
+<div id="google_translate_element"></div>
+</div>
+
+</div>
+
+  </div>
+
+
 <!-- MAIN WEBSITE -->
 <div id="content">
 
@@ -44,26 +75,7 @@
 </div>
 <header>
 
-<!-- ANNOUNCEMENT BAR -->
-<div class="announcement-bar">
 
-<div class="announcement-label">
-Announcements
-</div>
-
-<marquee class="announcement-text"
-scrollamount="10"
-onmouseover="this.stop();"
-onmouseout="this.start();">
-
-
-One Day National Workshop On "AI ADOPTION TRENDS IN KEY INDUSTRIES UPDATES"    |   
- Admission for new Academic session from August 2026
-
-
-</marquee>
-
-</div>
 
 <!-- LOGO AREA -->
 <div class="logo-area">
@@ -107,6 +119,51 @@ One Day National Workshop On "AI ADOPTION TRENDS IN KEY INDUSTRIES UPDATES"    |
 
 </nav>
 
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+
+<div class="announcement-label">
+Announcements
+</div>
+
+<marquee class="announcement-text"
+scrollamount="10"
+onmouseover="this.stop();"
+onmouseout="this.start();">
+
+
+One Day National Workshop On "AI ADOPTION TRENDS IN KEY INDUSTRIES UPDATES"    |   
+ Admission for new Academic session from August 2026
+
+
+</marquee>
+
+</div>
+
+<!--HERO SLIDER SECTION-->
+
+<div class="hero-slider">
+
+  <div class="slides fade">
+    <img src="images/SOET1.jpeg">
+    <div class="text">CATALYZING CAREERS</div>
+  </div>
+
+  <div class="slides fade">
+    <img src="images/slide2.jpeg">
+    <div class="text">INNOVATION & RESEARCH</div>
+  </div>
+
+  <div class="slides fade">
+    <img src="images/ejucation.jpeg">
+    <div class="text">WORLD CLASS EDUCATION</div>
+  </div>
+
+  <a class="prev" onclick="changeSlide(-1)">❮</a>
+  <a class="next" onclick="changeSlide(1)">❯</a>
+
+</div>
+
 </header>
 
 <footer class="footer">
@@ -128,7 +185,7 @@ One Day National Workshop On "AI ADOPTION TRENDS IN KEY INDUSTRIES UPDATES"    |
 
       <p>+91-8770122362</p>
       <p>soet@vikramuniv.ac.in</p>
-      <a href="https://www.soet.ac.in" target="_blank">www.soet.ac.in</a>
+      <a href="https://soet.ac.in" target="_blank">soet.ac.in</a>
     </div>
 
     <div class="footer-col">
@@ -167,6 +224,11 @@ One Day National Workshop On "AI ADOPTION TRENDS IN KEY INDUSTRIES UPDATES"    |
   <div class="footer-bottom">
     Copyright © 2026 Student Tech Team SOET
   </div>
+
+  <div class="footer-info">
+Last Updated: <span id="lastUpdated"></span> |
+Visitors: <span id="visitorCount"></span>
+</div>
 </footer>
 
 </div>
@@ -227,6 +289,67 @@ function openSearch(){
 
 function closeSearch(){
     document.getElementById("searchOverlay").style.display="none";
+}
+
+</script>
+
+<script>
+
+
+document.getElementById("lastUpdated").innerHTML = document.lastModified;
+
+
+let count = localStorage.getItem("visitorCount");
+
+if(count === null){
+count = 1;
+}else{
+count = Number(count) + 1;
+}
+
+localStorage.setItem("visitorCount", count);
+document.getElementById("visitorCount").innerText = count;
+
+</script>
+
+<script>
+function googleTranslateElementInit() {
+new google.translate.TranslateElement(
+{pageLanguage: 'en'},
+'google_translate_element'
+);
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+
+  let slides = document.getElementsByClassName("slides");
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slideIndex++;
+
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+
+  slides[slideIndex-1].style.display = "block";
+
+  setTimeout(showSlides, 20000);
+}
+
+function changeSlide(n){
+  slideIndex += n-1;
+  showSlides();
 }
 
 </script>
