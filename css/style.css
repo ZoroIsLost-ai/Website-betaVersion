@@ -1307,3 +1307,331 @@ display:block;
         padding: 25px;
     }
 }
+
+/* ==========================================================================
+   ABOUT PAGE STYLES - FULL RESET
+   ========================================================================== */
+
+/* --- Page Banner --- */
+.about-banner {
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    margin-bottom: 0;
+}
+.about-banner h1 { font-size: 48px; margin-bottom: 15px; letter-spacing: 2px; }
+
+/* --- Reusable Section Utilities --- */
+.section-title {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #800000;
+}
+.text-center.section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* --- Overview Section --- */
+.about-overview {
+    padding: 80px 5%;
+    background-color: #fff;
+}
+.overview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+.overview-text { flex: 1.5; min-width: 300px; }
+.overview-text h2 { font-size: 32px; color: #800000; margin-bottom: 15px; }
+.title-underline { width: 50px; height: 4px; background: #ffcc00; margin-bottom: 20px; }
+.overview-text p { font-size: 16px; color: #555; line-height: 1.8; margin-bottom: 15px; }
+
+.overview-stats {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    min-width: 300px;
+}
+.stat-box {
+    background: #f4f6f9; padding: 30px 20px; text-align: center;
+    border-radius: 8px; border-bottom: 4px solid #800000; transition: transform 0.3s;
+}
+.stat-box:hover { transform: translateY(-5px); }
+.stat-box h3 { font-size: 36px; color: #800000; margin-bottom: 5px; }
+.stat-box p { color: #666; font-weight: bold; }
+
+/* --- Vision & Mission Section --- */
+.vision-mission-section {
+    padding: 80px 5%; background-color: #f4f6f9;
+}
+.vm-container {
+    display: flex; flex-wrap: wrap; gap: 40px; max-width: 1200px;
+    margin: 0 auto; justify-content: center;
+}
+.vm-card {
+    flex: 1; min-width: 300px; background: #ffffff; padding: 40px 30px;
+    border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-top: 5px solid #800000; transition: transform 0.3s ease;
+}
+.vm-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+.vm-icon {
+    width: 60px; height: 60px; background-color: rgba(128, 0, 0, 0.1);
+    color: #800000; font-size: 28px; display: flex; align-items: center;
+    justify-content: center; border-radius: 50%; margin-bottom: 20px;
+}
+.vm-card h3 { color: #333; font-size: 24px; margin-bottom: 15px; }
+.vm-card p { color: #555; line-height: 1.7; font-size: 15.5px; }
+.mission-list { list-style: none; padding: 0; margin: 0; }
+.mission-list li { color: #555; line-height: 1.6; font-size: 15px; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
+.mission-list li i { color: #800000; font-size: 14px; margin-top: 5px; }
+
+/* --- Leadership Section --- */
+.leadership-section {
+    padding: 80px 5%; background-color: #fff;
+}
+.leader-row {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 50px;
+    margin-bottom: 70px; max-width: 1100px; margin-left: auto; margin-right: auto;
+}
+.leader-row.reverse { flex-direction: row-reverse; }
+.leader-image { flex: 1; min-width: 300px; position: relative; text-align: center; }
+.leader-image img { width: 100%; max-width: 350px; border-radius: 10px; box-shadow: 15px 15px 0px rgba(128, 0, 0, 0.1); }
+.leader-name {
+    background: #800000; color: white; padding: 15px; border-radius: 8px;
+    position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+    width: 80%; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.leader-name h4 { margin: 0; font-size: 18px; }
+.leader-name p { margin: 0; color: #ffcc00; font-size: 14px; }
+.leader-text { flex: 1.5; min-width: 300px; }
+.leader-text h3 { font-size: 26px; color: #333; margin-bottom: 20px; }
+.quote-icon { font-size: 40px; color: #f4f6f9; float: left; margin: 0 15px 10px 0; }
+.leader-text p { font-size: 16px; color: #555; line-height: 1.8; font-style: italic; }
+
+/* --- History Timeline (FIXED ALIGNMENT) --- */
+.history-section {
+    padding: 80px 5%; background-color: #f4f6f9;
+}
+.timeline { 
+    position: relative; max-width: 1000px; margin: 0 auto; box-sizing: border-box; 
+}
+.timeline * { box-sizing: border-box; } /* Forces padding inside the width */
+.timeline::after {
+    content: ''; position: absolute; width: 4px; background-color: #800000;
+    top: 0; bottom: 0; left: 50%; margin-left: -2px;
+}
+.timeline-item { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+.timeline-item::after {
+    content: ''; position: absolute; width: 20px; height: 20px;
+    right: -10px; background-color: white; border: 4px solid #ffcc00;
+    top: 25px; border-radius: 50%; z-index: 1;
+}
+.timeline-item.right::after { left: -10px; right: auto; }
+.timeline-content {
+    padding: 20px 30px; background-color: white; position: relative;
+    border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.timeline-content h2 { color: #800000; margin-bottom: 10px; }
+.timeline-content p { color: #555; line-height: 1.6; margin: 0; }
+
+@media screen and (max-width: 768px) {
+  .timeline::after { left: 31px; }
+  .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+  .timeline-item.left::after, .timeline-item.right::after { left: 21px; }
+  .timeline-item.right { left: 0%; }
+}
+
+/* --- Leadership Team Grid --- */
+.faculty-section {
+    padding: 80px 5%; background-color: #fff; max-width: 1200px; margin: 0 auto;
+}
+.faculty-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; margin-top: 20px;
+}
+.faculty-card {
+    background: #f9f9f9; border-radius: 10px; padding: 30px 20px;
+    text-align: center; border-top: 4px solid #800000; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s;
+}
+.faculty-card:hover { 
+    transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+}
+
+/* Director Span Highlight */
+.director-card {
+    grid-column: 1 / -1; 
+    max-width: 700px; margin: 0 auto 30px;
+    border-top: 5px solid #ffcc00; 
+    background: #ffffff; box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+.faculty-img {
+    width: 120px; height: 120px; margin: 0 auto 20px;
+    border-radius: 50%; overflow: hidden; border: 3px solid #ffcc00;
+}
+.director-card .faculty-img {
+    width: 150px; height: 150px; border-color: #800000;
+}
+.faculty-img img { width: 100%; height: 100%; object-fit: cover; }
+.faculty-card h4 { color: #333; font-size: 20px; margin-bottom: 5px; }
+.faculty-role { color: #800000; font-weight: bold; font-size: 14px; margin-bottom: 15px; }
+.faculty-desc { color: #666; font-size: 14.5px; line-height: 1.6; }
+
+.vc-btn{
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #800000;
+    color: #800000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* ==========================================================================
+   LIFE IN UJJAIN PAGE STYLES
+   ========================================================================== */
+
+/* --- Banner --- */
+.ujjain-banner {
+    color: white; text-align: center; padding: 120px 20px; margin-bottom: 0;
+}
+.ujjain-banner h1 { font-size: 54px; margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase;}
+
+/* --- Lifestyle Alternating Rows --- */
+.lifestyle-section {
+    background-color: #fff;
+}
+.lifestyle-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+.lifestyle-row.reverse {
+    flex-direction: row-reverse;
+}
+.lifestyle-img {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+.lifestyle-img img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}
+.lifestyle-img:hover img {
+    transform: scale(1.02);
+}
+/* Add a decorative element behind the image */
+.lifestyle-img::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffcc00;
+    border-radius: 12px;
+    top: 20px;
+    left: -20px;
+    z-index: -1;
+}
+.lifestyle-row.reverse .lifestyle-img::before {
+    left: 20px;
+}
+.lifestyle-text {
+    flex: 1.2;
+    min-width: 300px;
+}
+.lifestyle-text h3 {
+    font-size: 32px;
+    color: #800000;
+    margin-bottom: 15px;
+}
+.lifestyle-text p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* --- Heritage Grid (Dark Mode Section) --- */
+.heritage-section {
+    background: #1a1a1a; /* Dark background to make photos pop */
+}
+.heritage-section .section-title::after {
+    background-color: #ffcc00; /* Switch underline to gold for dark mode */
+}
+.heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.heritage-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 400px;
+    cursor: pointer;
+}
+.heritage-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.heritage-card:hover img {
+    transform: scale(1.1); /* Slow zoom effect on hover */
+}
+.heritage-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    padding: 30px 20px 20px;
+    color: white;
+    transform: translateY(30px);
+    transition: transform 0.4s ease;
+}
+.heritage-card:hover .heritage-overlay {
+    transform: translateY(0); /* Text slides up smoothly on hover */
+}
+.heritage-overlay h4 {
+    color: #ffcc00;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.heritage-overlay p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Responsive fixes for alternating rows */
+@media screen and (max-width: 900px) {
+    .lifestyle-row, .lifestyle-row.reverse {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .lifestyle-img::before {
+        display: none; /* Hide the decorative offset box on mobile */
+    }
+}
