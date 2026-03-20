@@ -1635,3 +1635,670 @@ display:block;
         display: none; /* Hide the decorative offset box on mobile */
     }
 }
+
+/* ==========================================================================
+   MAIN ADMISSIONS HUB PAGE STYLES
+   ========================================================================== */
+
+/* --- Banner --- */
+.admission-hub-banner {
+    color: white; text-align: center; padding: 120px 20px; margin-bottom: 0;
+}
+.admission-hub-banner h1 { font-size: 48px; margin-bottom: 15px; letter-spacing: 1px;}
+
+/* --- Gateway Grid (The 4 big buttons) --- */
+.gateway-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+.gateway-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none; /* Because it's an <a> tag */
+    color: inherit;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gateway-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(128,0,0,0.1);
+    border-color: #800000;
+}
+.gateway-card i {
+    font-size: 45px;
+    color: #800000;
+    margin-bottom: 20px;
+    transition: transform 0.3s, color 0.3s;
+}
+.gateway-card:hover i {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+.gateway-card h3 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+.gateway-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Pushes the "View Details" to the bottom uniformly */
+}
+.view-link {
+    font-weight: bold;
+    color: #800000;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+.gateway-card:hover .view-link {
+    color: #b30000;
+}
+
+/* --- Quick Enquiry Form Inputs --- */
+.enquiry-form input:focus, 
+.enquiry-form select:focus, 
+.enquiry-form textarea:focus {
+    border-color: #800000 !important;
+    box-shadow: 0 0 5px rgba(128,0,0,0.2);
+}
+.enquiry-form button:hover {
+    background: #b30000 !important;
+    box-shadow: 0 5px 15px rgba(128,0,0,0.2);
+}
+
+/* Responsive Fixes */
+@media screen and (max-width: 768px) {
+    .enquiry-info, .enquiry-form {
+        padding: 40px 25px !important;
+    }
+}
+
+/* ==========================================================================
+   WHY SOET PAGE STYLES - EXPANDED
+   ========================================================================== */
+
+/* --- Banner --- */
+.why-banner {
+    color: white; text-align: center; padding: 120px 20px; margin-bottom: 0;
+}
+.why-banner h1 { font-size: 48px; margin-bottom: 15px; letter-spacing: 1px; color: #fff;}
+
+/* --- Trust / Stats Bar --- */
+.trust-bar {
+    background-color: #800000;
+    color: white;
+    padding: 30px 5%;
+    border-bottom: 5px solid #ffcc00;
+}
+.trust-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 200px;
+}
+.trust-item i {
+    font-size: 36px;
+    color: #ffcc00;
+}
+.trust-item h4 {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+.trust-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+/* --- Centers of Excellence (Images with hover) --- */
+.excellence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.excellence-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    background: #fff;
+    transition: transform 0.3s;
+}
+.excellence-card:hover {
+    transform: translateY(-8px);
+}
+.excellence-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 4px solid #ffcc00;
+}
+.excellence-content {
+    padding: 25px;
+}
+.excellence-content h3 {
+    color: #800000;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+.excellence-content p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Reasons Grid --- */
+.reasons-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;
+}
+.reason-card {
+    background: #ffffff; padding: 40px 30px; border-radius: 12px; text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; border-bottom: 5px solid transparent;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+}
+.reason-card:hover {
+    transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-bottom: 5px solid #800000;
+}
+.reason-icon {
+    width: 80px; height: 80px; background: linear-gradient(135deg, #800000, #b30000);
+    color: white; font-size: 32px; display: flex; align-items: center;
+    justify-content: center; border-radius: 20px; margin: 0 auto 25px;
+    transform: rotate(45deg); transition: transform 0.3s ease;
+}
+.reason-card:hover .reason-icon { transform: rotate(0deg); }
+.reason-icon i { transform: rotate(-45deg); transition: transform 0.3s ease; }
+.reason-card:hover .reason-icon i { transform: rotate(0deg); }
+.reason-card h3 { color: #333; font-size: 22px; margin-bottom: 15px; }
+.reason-card p { color: #666; line-height: 1.7; font-size: 15px; }
+
+/* --- Call To Action Section --- */
+.cta-section {
+    background: linear-gradient(135deg, #800000, #4d0000); padding: 80px 20px;
+    text-align: center; color: white; margin-top: 0;
+}
+.cta-container h2 { font-size: 36px; margin-bottom: 15px; color: #ffcc00; }
+.cta-container p { font-size: 18px; margin-bottom: 30px; opacity: 0.9; }
+.cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.btn {
+    padding: 15px 35px; font-size: 16px; font-weight: bold; border-radius: 5px;
+    text-decoration: none; transition: all 0.3s ease; display: inline-block;
+}
+.btn-primary { background-color: #ffcc00; color: #800000; }
+.btn-primary:hover { background-color: #fff; transform: translateY(-3px); }
+.btn-secondary { background-color: transparent; color: white; border: 2px solid white; }
+.btn-secondary:hover { background-color: white; color: #800000; transform: translateY(-3px); }
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .trust-container { flex-direction: column; align-items: flex-start; padding-left: 20px; }
+}
+
+/* ==========================================================================
+   B.TECH ADMISSION PAGE STYLES
+   ========================================================================== */
+
+/* --- Banner --- */
+.admission-banner {
+    color: white; text-align: center; padding: 120px 20px; margin-bottom: 0;
+}
+.admission-banner h1 { font-size: 48px; margin-bottom: 15px; letter-spacing: 1px;}
+
+/* --- Pathway Process --- */
+.pathway-grid {
+    display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-bottom: 40px;
+}
+.pathway-card {
+    flex: 1; min-width: 320px; max-width: 500px; background: white; 
+    border-radius: 12px; padding: 40px 30px; position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid #800000;
+    transition: transform 0.3s ease;
+}
+.pathway-card:hover { transform: translateY(-5px); }
+.pathway-badge {
+    position: absolute; top: -15px; right: 20px; background: #800000; color: #ffcc00;
+    padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.pathway-icon {
+    width: 60px; height: 60px; background: #800000; color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 24px;
+    margin-bottom: 20px;
+}
+.pathway-card h3 { color: #333; font-size: 24px; margin-bottom: 15px; }
+.pathway-card p { color: #666; line-height: 1.6; margin-bottom: 20px; }
+.process-list { list-style: none; padding: 0; margin: 0; }
+.process-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: #444; font-weight: 500;}
+.process-list li i { color: #28a745; font-size: 16px; }
+
+/* --- Eligibility Box --- */
+.eligibility-box {
+    background: #fff3cd; border-left: 5px solid #ffc107; padding: 25px;
+    border-radius: 8px; max-width: 1040px; margin: 0 auto; color: #856404;
+}
+.eligibility-box h4 { margin-bottom: 10px; font-size: 18px; display: flex; align-items: center; gap: 10px; }
+.eligibility-box p { margin: 0; line-height: 1.6; font-size: 15px; }
+
+/* --- Branches Matrix --- */
+.branch-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;
+}
+.branch-card {
+    background: #f9f9f9; padding: 35px 25px; border-radius: 10px; text-align: center;
+    position: relative; overflow: hidden; border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+.branch-card:hover {
+    background: #ffffff; box-shadow: 0 15px 35px rgba(128, 0, 0, 0.1);
+    transform: translateY(-5px); border-color: #800000;
+}
+.seat-badge {
+    position: absolute; top: 15px; left: -35px; background: #ffcc00; color: #800000;
+    padding: 5px 40px; font-weight: bold; font-size: 13px; transform: rotate(-45deg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.branch-icon {
+    font-size: 45px; color: #800000; margin-bottom: 20px; transition: transform 0.3s;
+}
+.branch-card:hover .branch-icon { transform: scale(1.1); }
+.branch-card h3 { color: #333; font-size: 20px; margin-bottom: 15px; }
+.branch-focus { color: #666; font-size: 14.5px; line-height: 1.6; }
+.branch-focus strong { color: #800000; }
+/*
+
+==========================================================================
+   M.TECH PROGRAMS PAGE STYLES
+   ========================================================================== */
+
+/* --- Banner --- */
+.mtech-banner {
+    color: white; text-align: center; padding: 120px 20px; margin-bottom: 0;
+}
+.mtech-banner h1 { font-size: 48px; margin-bottom: 15px; letter-spacing: 1px;}
+
+/* --- M.Tech Grid & Cards --- */
+.mtech-grid {
+    display: grid;
+    /* This makes cards wide enough to comfortably hold the specialization pills */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+}
+.mtech-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.mtech-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(128, 0, 0, 0.15);
+    border-color: #800000;
+}
+
+/* Header */
+.mtech-header {
+    background: linear-gradient(135deg, #800000, #b30000);
+    color: white;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.mtech-header i {
+    font-size: 32px;
+    color: #ffcc00;
+}
+.mtech-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Body */
+.mtech-body {
+    padding: 30px;
+    flex-grow: 1; /* Pushes footer to the bottom evenly */
+}
+.mtech-desc {
+    color: #555;
+    font-size: 15.5px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    border-left: 4px solid #ffcc00;
+    padding-left: 15px;
+}
+.specs-title {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Specialization Pills Layout */
+.specs-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.specs-pills span {
+    background: #f4f6f9;
+    color: #444;
+    padding: 8px 16px;
+    border-radius: 50px; /* Makes them pill-shaped */
+    font-size: 13.5px;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    transition: all 0.2s ease;
+}
+.mtech-card:hover .specs-pills span {
+    background: #fff9e6; /* Slight gold tint on hover */
+    border-color: #ffcc00;
+    color: #800000;
+}
+
+/* Footer Details */
+.mtech-footer {
+    background: #fafafa;
+    padding: 20px 30px;
+    border-top: 1px solid #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+}
+.footer-item i {
+    color: #800000;
+    font-size: 16px;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    .mtech-grid {
+        grid-template-columns: 1fr;
+    }
+    .mtech-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/*==========================================================================
+   FEES & SCHOLARSHIPS PAGE STYLES
+   ========================================================================== */
+
+/* --- Banner --- */
+.fees-banner {
+    color: white; text-align: center; padding: 120px 20px; margin-bottom: 0;
+}
+.fees-banner h1 { font-size: 48px; margin-bottom: 15px; letter-spacing: 1px;}
+
+/* --- Fee Tables --- */
+.fee-table-container {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid #eaeaea;
+}
+.fee-header {
+    background: #800000;
+    color: white;
+    padding: 20px 25px;
+}
+.fee-header h3 {
+    margin: 0;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.fee-header h3 i {
+    color: #ffcc00;
+}
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 16px;
+    text-align: left;
+}
+.styled-table thead tr {
+    background-color: #f4f6f9;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+.styled-table th,
+.styled-table td {
+    padding: 15px 25px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #fafafa;
+}
+.styled-table tbody tr:hover {
+    background-color: #fdf5f5; /* Very light maroon hover */
+}
+.styled-table tbody tr:last-of-type {
+    border-bottom: none;
+}
+.total-row {
+    background-color: #fff9e6 !important; /* Gold tint for the total */
+    font-weight: bold;
+    color: #800000;
+    font-size: 18px;
+    border-top: 2px solid #ffcc00 !important;
+}
+
+/* Fee Note */
+.fee-note {
+    margin-top: 20px;
+    font-size: 14.5px;
+    color: #666;
+    background: #fdfdfd;
+    padding: 15px;
+    border-left: 4px solid #800000;
+    border-radius: 4px;
+}
+.fee-note i { color: #800000; margin-right: 5px;}
+
+/* --- Scholarships Grid --- */
+.scholarship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.scholarship-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-bottom: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+.scholarship-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-bottom: 4px solid #ffcc00;
+}
+.scholarship-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(128, 0, 0, 0.05);
+    color: #800000;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    transition: background 0.3s, color 0.3s;
+}
+.scholarship-card:hover .scholarship-icon {
+    background: #800000;
+    color: #ffcc00;
+}
+.scholarship-card h4 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+.scholarship-card p {
+    color: #666;
+    font-size: 14.5px;
+    line-height: 1.7;
+}
+
+/* Responsive Table */
+@media screen and (max-width: 600px) {
+    .styled-table th, .styled-table td {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+}
+/* 
+
+/* ==========================================================================
+   ADMISSIONS FAQ PAGE STYLES
+   ========================================================================== */
+
+/* --- Banner --- */
+.faq-banner {
+    color: white; text-align: center; padding: 120px 20px; margin-bottom: 0;
+}
+.faq-banner h1 { font-size: 48px; margin-bottom: 15px; letter-spacing: 1px;}
+
+/* --- FAQ Categories --- */
+.faq-category-title {
+    color: #800000;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ffcc00;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.faq-category-title i {
+    color: #ffcc00;
+    font-size: 28px;
+}
+
+/* --- Interactive Accordion Styling --- */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.faq-item {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+/* Open State Styling */
+.faq-item[open] {
+    border-color: #800000;
+    box-shadow: 0 5px 15px rgba(128,0,0,0.1);
+}
+
+/* Summary (The Clickable Question) */
+.faq-item summary {
+    padding: 20px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    list-style: none; /* Removes default triangle */
+    position: relative;
+    background-color: #fafafa;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Plus/Minus Icon using CSS */
+.faq-item summary::after {
+    content: '\002B'; /* Unicode Plus sign */
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #800000;
+    font-weight: normal;
+    transition: transform 0.3s ease;
+}
+
+/* Hide default marker for webkit browsers */
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Hover and Active states */
+.faq-item summary:hover {
+    background-color: #f0f0f0;
+    color: #800000;
+}
+.faq-item[open] summary {
+    background-color: #800000;
+    color: #ffffff;
+    border-bottom: 1px solid #eee;
+}
+.faq-item[open] summary::after {
+    content: '\2212'; /* Unicode Minus sign */
+    color: #ffcc00;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Content (The Answer) */
+.faq-content {
+    padding: 20px 25px;
+    background-color: #ffffff;
+    color: #555;
+    line-height: 1.7;
+    font-size: 15.5px;
+    border-top: 1px solid #eaeaea;
+}
+.faq-content p {
+    margin: 0;
+}
